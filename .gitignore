@@ -1,0 +1,22 @@
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+
+# PyCharm
+.idea/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Test cache
+.pytest_cache/
+
+# Local databases
+*.db
+*.sqlite3
