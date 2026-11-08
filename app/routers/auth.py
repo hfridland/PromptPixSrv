@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.schemas.users import UserLogin
-from app.services.users import get_user_by_email
+from app.services.users import get_user_by_email, get_user_by_name
 from app.security import verify_password, create_access_token
 from app.schemas.auth import TokenResponse
 
@@ -30,6 +30,10 @@ def login(
         form_data.username,
         # user.email
     )
+
+    if db_user is None:
+        db_user = get_user_by_name(db, form_data.username)
+
 
     if db_user is None:
         raise HTTPException(

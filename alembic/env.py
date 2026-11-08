@@ -6,7 +6,10 @@ from sqlalchemy import pool
 from alembic import context
 from app.config import settings
 from app.database import Base
-import app.models
+import app.models.user as user
+import app.models.tree_hdr as tree_hdr
+import app.models.tree_body as tree_body
+
 
 
 # this is the Alembic Config object, which provides

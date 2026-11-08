@@ -24,6 +24,17 @@ def get_user_by_email(
 
     return db.scalar(stmt)
 
+def get_user_by_name(
+    db: Session,
+    username: str
+) -> User | None:
+
+    stmt = select(User).where(
+        User.name == username
+    )
+
+    return db.scalar(stmt)
+
 def get_user(
     db: Session,
     user_id: int
