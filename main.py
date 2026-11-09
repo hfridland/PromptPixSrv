@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Depends
 
+from app.config import settings
 from app.routers import users, auth, image_trees
 
 from sqlalchemy.orm import Session
@@ -14,7 +15,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[settings.frontend_url],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = 60
     openai_api_key: str
     gemini_api_key: str
+    frontend_url: str
     
     model_config = SettingsConfigDict(
         env_file=os.getenv("ENV_FILE", ".env"),
